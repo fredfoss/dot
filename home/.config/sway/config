@@ -183,7 +183,7 @@ bindsym $mod+r mode "resize"
 #
 ### Power management
 #
-set $power_control power control: [l]ock, [e]xit, [s]uspend, [r]eboot, [p]ower off
+set $power_control Power Control: [L]ock, [E]xit, [S]uspend, [R]eboot, [P]ower off
 mode "$power_control" {
   bindsym l exec swaylock -f -c 000000, mode default
   bindsym e exec swaymsg exit, mode default
@@ -260,28 +260,30 @@ bindsym {
 
 include colorscheme
 # class                 border  bg      fg      indicator child_border
-client.focused          $base05 $base05 $base0F $base04 $base04
-client.focused_inactive $base03 $base03 $base0C $base02 $base02
-client.unfocused        $base03 $base03 $base0C $base02 $base02
-# client.urgent           $base08 $base08 $base00 $base08 $base08
-# client.placeholder      $base00 $base00 $base05 $base00 $base00
-# client.background       $base0F
+client.focused          $base5 $base5 $baseF $base4 $base4
+client.focused_inactive $base3 $base3 $baseC $base2 $base2
+client.unfocused        $base3 $base3 $baseC $base2 $base2
+client.urgent           $red1  $red1  $baseF $base8 $base8
+# client.placeholder    $base0 $base0 $base5 $base0 $base0
+# client.background     $baseF
 
 bar {
     position top
     status_command i3status-rs
 
     colors {
-        background $base00
-        separator  $base06
-        statusline $base04
+        background $base0
+        separator  $base6
+        statusline $baseF
 
         # State             border  bg      fg
-        focused_workspace   $base07 $base06 $base0F
-        active_workspace    $base04 $base03 $base0C
-        inactive_workspace  $base04 $base03 $base0C
-        urgent_workspace    $base08 $base08 $base0F
-        binding_mode        $base00 $base0A $base0F
+        focused_workspace   $base7 $base6 $baseF
+        active_workspace    $base4 $base3 $baseC
+        inactive_workspace  $base4 $base3 $baseC
+        # urgent_workspace  $base8 $base8 $baseF
+        urgent_workspace    $red1 $red0 $baseF
+        # binding_mode      $base0 $baseA $baseF
+        binding_mode        $yellow1 $yellow0 $baseF
     }
 }
 
